@@ -6,7 +6,9 @@ import llama_cpp
 
 
 MODEL_PATH = os.environ.get("MODEL_PATH", "/models/Qwen/Qwen3-0.6B")
-model = llama_cpp.Llama(model_path=MODEL_PATH)
+
+GGUF_PATH = MODEL_PATH + "/Qwen3.5-0.8B-UD-IQ2_M.gguf"
+model = llama_cpp.Llama(model_path=GGUF_PATH)
 
 def handler(event):
     print(f"Worker Start")
