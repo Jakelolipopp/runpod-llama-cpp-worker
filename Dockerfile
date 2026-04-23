@@ -26,9 +26,9 @@ ARG MODEL_ID=unsloth/Qwen3.5-0.8B-GGUF
 ENV HF_HOME=/root/.cache/huggingface
 ENV MODEL_PATH=/models/${MODEL_ID}
 
-
-RUN uv run hf download ${MODEL_ID} \
-    --local-dir ${MODEL_ID} \
+RUN mkdir -p /models && \
+    uv run hf download ${MODEL_ID} \
+    --local-dir ${MODEL_PATH} \
     --include "*mmproj-BF16*" \
     --include "*UD-IQ2_M*"
 
