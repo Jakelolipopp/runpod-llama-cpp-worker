@@ -39,4 +39,4 @@ ENV HF_HUB_OFFLINE=1
 COPY handler.py .
 
 # Execute the handler script directly with unbuffered output
-CMD ["python3", "-u", "handler.py"]
+CMD ["uv", "run", "python", "-u", "handler.py"]
