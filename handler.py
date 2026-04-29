@@ -5,8 +5,8 @@ import time
 import llama_cpp
 
 
-MODEL_PATH = os.environ.get("MODEL_PATH", "/models/Qwen/Qwen3-0.6B")
-GGUF_NAME = os.environ.get("GGUF_NAME", "Qwen3.5-0.8B-UD-IQ2_M.gguf")
+MODEL_PATH = os.environ.get("MODEL_PATH", "/models/unsloth/Qwen3.6-27B-GGUF")
+GGUF_NAME = os.environ.get("GGUF_NAME", "Qwen3.6-27B-UD-IQ2_XXS.gguf")
 
 GGUF_PATH = os.path.join(MODEL_PATH, GGUF_NAME)
 

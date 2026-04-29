@@ -22,7 +22,7 @@ RUN uv venv
 RUN uv pip install runpod huggingface_hub hf_transfer llama-cpp-python --extra-index-url "https://abetlen.github.io/llama-cpp-python/whl/cu125"
 
 
-ARG MODEL_ID=unsloth/Qwen3.5-0.8B-GGUF
+ARG MODEL_ID=unsloth/Qwen3.6-27B-GGUF
 ENV HF_HOME=/root/.cache/huggingface
 ENV MODEL_PATH=/models/${MODEL_ID}
 
@@ -30,7 +30,7 @@ RUN mkdir -p /models && \
     uv run hf download ${MODEL_ID} \
     --local-dir ${MODEL_PATH} \
     --include "*mmproj-BF16*" \
-    --include "*UD-IQ2_M*"
+    --include "*UD-IQ2_XXS*"
 
 # Critical: Set offline mode AFTER the download to prevent network calls during runtime
 ENV HF_HUB_OFFLINE=1
